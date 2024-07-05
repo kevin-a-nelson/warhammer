@@ -1,36 +1,63 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 import Model from './Model.vue'
 
-// props
+// Data
+const models = reactive([
+  { id: 1, xCordinate: 0, yCordinate: 0, size: 50},
+  { id: 2, xCordinate: 50, yCordinate: 0, size: 50}
+])
 
-// data
-const xCordinate = ref(10)
-const yCordinate = ref(20)
-const test = ref('test')
+const activeModelId = ref(null)
+const boardElement = ref(null)
 
-// computed
+// Methods
+function setActiveModel(id) {
+  activeModelId.value = id;
+}
 
-// methods
+// Lifecycle hooks
+onMounted(() => {
+  boardElement.value = document.getElementById('board');
+})
+
 function moveModel(e) {
-    console.log(e)
-    xCordinate.value = e.x - 365 - 25;
-    yCordinate.value = e.y - 53 - 25;
+  if (!activeModelId.value) {
+    return
+  }
+
+  const activeModelIndex = models.findIndex(model => model.id === activeModelId.value);
+
+  if (activeModelIndex === -1) {
+    return
+  }
+
+  var rect = boardElement.value.getBoundingClientRect();
+
+  var x = e.clientX - rect.left - models[activeModelIndex].size / 2;
+  var y = e.clientY - rect.top - models[activeModelIndex].size / 2;
+
+  console.log(x, y)
+
+  models[activeModelIndex].xCordinate = x;
+  models[activeModelIndex].yCordinate = y;
+
+  activeModelId.value = null; // Reset active model after moving
 }
 </script>
 
 <template>
-    <div class="board" @click="moveModel">
-        <Model :test="test" :xCordinate="xCordinate" :yCordinate="yCordinate" />
-    </div>
+  <div id="board" @click="moveModel">
+    <Model v-for="model in models" :key="model.id" :model="model" @setActiveModel="setActiveModel" />
+  </div>
 </template>
 
 <style>
-.board {
-    height: 90vh;
-    width: 1000px;
-    border: 1px solid;
-    /* overflow: scroll; */
-    margin: 0px auto;
+#board {
+  height: 90vh;
+  width: 1000px;
+  position: relative;
+  border: 1px solid;
+  margin: 0 auto;
 }
 </style>

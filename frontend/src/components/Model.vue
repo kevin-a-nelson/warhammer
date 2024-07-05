@@ -1,22 +1,25 @@
 <script setup>
-import { reactive, computed } from 'vue'
+import { reactive, computed, defineProps, defineEmits } from 'vue'
 
 // props
 const props = defineProps({
-  xCordinate: Number,
-  yCordinate: Number,
-  test: String,
+  model: Object
 })
+
+const emits = defineEmits(['setActiveModel'])
 
 const modelStyle = computed(() => {
-    return { left: `${props.xCordinate}px`, top: `${props.yCordinate}px` }
+    return { left: `${props.model.xCordinate}px`, top: `${props.model.yCordinate}px`, width: `${props.model.size}px`, height: `${props.model.size}px` }
 })
 
+function handleClick() {
+  emits('setActiveModel', props.model.id)
+}
 </script>
 
 
 <template>
-    <div class="model" :style="modelStyle">
+    <div class="model" :style="modelStyle" @click.stop="handleClick">
         <img src="../assets/spaceMarine.jpg">
     </div>
 </template>
@@ -24,21 +27,22 @@ const modelStyle = computed(() => {
 <style>
 
 .model {
-    width: 50px;
-    height: 50px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    position: relative;
+    position: absolute;
+    box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 0 0 5px black inset;  */
+    cursor: pointer; /* Added to indicate clickable */
 }
 
 .model img {
-    width: 100%;
-    height: 100%;
+    width: 150%;
+    height: 150%;
     object-fit: cover;
 }
 
