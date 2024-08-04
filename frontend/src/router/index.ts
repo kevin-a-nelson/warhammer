@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import LoginView from '../views/LoginView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/board',
       name: 'home',
       component: HomeView
       // route level code-splitting
@@ -13,6 +14,11 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       // component: () => import('../views/HomeVue.vue')
     },
+    {
+      path: "/login",
+      name: "login",
+      component: LoginView
+    }
   ]
 })
 
