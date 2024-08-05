@@ -1,0 +1,681 @@
+[
+    {
+        "id": "e703-1754-98a9-d3c1",
+        "name": "Caestus Assault Ram [Legends]",
+        "from": "entry",
+        "cost": 215,
+        "stats": {
+            "characteristics": [
+                {
+                    "$text": "20+\"",
+                    "name": "M",
+                    "typeId": "e703-ecb6-5ce7-aec1"
+                },
+                { "$text": "10", "name": "T", "typeId": "d29d-cf75-fc2d-34a4" },
+                { "$text": "3+", "name": "SV", "typeId": "450-a17e-9d5e-29da" },
+                { "$text": "18", "name": "W", "typeId": "750a-a2ec-90d3-21fe" },
+                {
+                    "$text": "6+",
+                    "name": "LD",
+                    "typeId": "58d2-b879-49c7-43bc"
+                },
+                { "$text": "0", "name": "OC", "typeId": "bef7-942a-1a23-59f8" }
+            ],
+            "id": "e703-1754-98a9-d3c1",
+            "name": "Caestus Assault Ram [Legends]",
+            "hidden": false,
+            "typeId": "c547-1836-d8a-ff4f",
+            "typeName": "Unit",
+            "from": "entry"
+        },
+        "abilities": [
+            {
+                "characteristics": [
+                    {
+                        "$text": "This model has a transport capacity of 12 Adeptus Astartes\u00a0Infantry models. Each Jump Pack, Wulfen, Gravis or\u00a0Terminator model takes up the space of 2 models and each\u00a0Centurion model takes up the space of 3 models.",
+                        "name": "Description",
+                        "typeId": "9b8f-694b-e5e-b573"
+                    }
+                ],
+                "id": "6943-fbd0-f8ec-a693",
+                "name": "Transport",
+                "hidden": false,
+                "typeId": "9cc3-6d83-4dd3-9b64",
+                "typeName": "Abilities",
+                "from": "entry"
+            },
+            {
+                "characteristics": [
+                    {
+                        "$text": "If a unit disembarks from this Transport before\u00a0it moves, until the end of the turn, that unit is eligible to\u00a0charge in a turn in which it Advanced.",
+                        "name": "Description",
+                        "typeId": "9b8f-694b-e5e-b573"
+                    }
+                ],
+                "id": "58cc-7fec-e711-e00d",
+                "name": "Into the Foe",
+                "hidden": false,
+                "typeId": "9cc3-6d83-4dd3-9b64",
+                "typeName": "Abilities",
+                "from": "entry"
+            },
+            {
+                "characteristics": [
+                    {
+                        "$text": "While this model has 1-6 wounds remaining, each time this\u00a0model makes an attack, subtract 1 from the Hit roll.",
+                        "name": "Description",
+                        "typeId": "9b8f-694b-e5e-b573"
+                    }
+                ],
+                "id": "2939-d2fb-4373-2622",
+                "name": "Damaged: 1-6 wounds remaining",
+                "hidden": false,
+                "typeId": "9cc3-6d83-4dd3-9b64",
+                "typeName": "Abilities",
+                "from": "entry"
+            }
+        ],
+        "weapons": [
+            {
+                "rules": [
+                    {
+                        "description": "Weapons with [BLAST] in their profile are known as Blast weapons, and they make a random number of attacks. Each time you determine how many attacks are made with a Blast weapon, add 1 to the result for every five models that were in the target unit when you selected it as the target (rounding down). Blast weapons can never be used to make attacks against a unit that is within Engagement Range of one or more units from the attacking model\u2019s army (including its own unit).",
+                        "id": "6c1f-1cf7-ff25-c99e",
+                        "name": "Blast",
+                        "hidden": false,
+                        "page": 26
+                    },
+                    {
+                        "description": "Weapons with [IGNORES COVER] in their profile are known as Ignores Cover weapons. Each time an attack is made with such a weapon, the target cannot have the Benefit of Cover against that attack.",
+                        "id": "4640-43e7-30b-215a",
+                        "name": "Ignores Cover",
+                        "hidden": false,
+                        "page": 25
+                    }
+                ],
+                "profiles": [
+                    {
+                        "characteristics": [
+                            {
+                                "$text": "36\"",
+                                "name": "Range",
+                                "typeId": "9896-9419-16a1-92fc"
+                            },
+                            {
+                                "$text": "2D6",
+                                "name": "A",
+                                "typeId": "3bb-c35f-f54-fb08"
+                            },
+                            {
+                                "$text": "3+",
+                                "name": "BS",
+                                "typeId": "94d-8a98-cf90-183e"
+                            },
+                            {
+                                "$text": "6",
+                                "name": "S",
+                                "typeId": "2229-f494-25db-c5d3"
+                            },
+                            {
+                                "$text": "-1",
+                                "name": "AP",
+                                "typeId": "9ead-8a10-520-de15"
+                            },
+                            {
+                                "$text": "1",
+                                "name": "D",
+                                "typeId": "a354-c1c8-a745-f9e3"
+                            },
+                            {
+                                "$text": "Blast, Ignores Cover",
+                                "name": "Keywords",
+                                "typeId": "7f1b-8591-2fcf-d01c"
+                            }
+                        ],
+                        "id": "370f-3154-7e51-b3e",
+                        "name": "Firefury Missile Batteries",
+                        "hidden": false,
+                        "typeId": "f77d-b953-8fa4-b762",
+                        "typeName": "Ranged Weapons",
+                        "from": "entry"
+                    }
+                ],
+                "id": "lzg2u254a2jgpk0adf",
+                "name": "Firefury Missile Batteries",
+                "entryId": "2b90-3730-69d-d0c0::c25d-5a0f-416-3276",
+                "number": 1,
+                "type": "upgrade",
+                "from": "entry"
+            },
+            {
+                "rules": [
+                    {
+                        "description": "Weapons with [MELTA X] in their profile are known as Melta weapons. Each time an attack made with such a weapon targets a unit within half that weapon\u2019s range, that attack\u2019s Damage characteristic is increased by the amount denoted by \u2018x\u2019.",
+                        "id": "7cdb-fb99-44a9-8849",
+                        "name": "Melta 4",
+                        "hidden": false,
+                        "page": 26
+                    },
+                    {
+                        "description": "Weapons with [TWIN-LINKED] in their profile are known as Twin-linked weapons. Each time an attack is made with such a weapon, you can re-roll that attack\u2019s Wound roll.",
+                        "id": "cf93-ad4d-2f08-a79d",
+                        "name": "Twin-linked",
+                        "hidden": false,
+                        "page": 25
+                    }
+                ],
+                "profiles": [
+                    {
+                        "characteristics": [
+                            {
+                                "$text": "18\"",
+                                "name": "Range",
+                                "typeId": "9896-9419-16a1-92fc"
+                            },
+                            {
+                                "$text": "2",
+                                "name": "A",
+                                "typeId": "3bb-c35f-f54-fb08"
+                            },
+                            {
+                                "$text": "3+",
+                                "name": "BS",
+                                "typeId": "94d-8a98-cf90-183e"
+                            },
+                            {
+                                "$text": "12",
+                                "name": "S",
+                                "typeId": "2229-f494-25db-c5d3"
+                            },
+                            {
+                                "$text": "-4",
+                                "name": "AP",
+                                "typeId": "9ead-8a10-520-de15"
+                            },
+                            {
+                                "$text": "6",
+                                "name": "D",
+                                "typeId": "a354-c1c8-a745-f9e3"
+                            },
+                            {
+                                "$text": "Melta 4, Twin-Linked",
+                                "name": "Keywords",
+                                "typeId": "7f1b-8591-2fcf-d01c"
+                            }
+                        ],
+                        "id": "7937-ea53-b11a-5864",
+                        "name": "Twin Magna-Melta",
+                        "hidden": false,
+                        "typeId": "f77d-b953-8fa4-b762",
+                        "typeName": "Ranged Weapons",
+                        "from": "entry"
+                    }
+                ],
+                "id": "lzg2u255ec69s1eyan",
+                "name": "Twin Magna-Melta",
+                "entryId": "2b90-3730-69d-d0c0::7991-6a40-95ec-8c58",
+                "number": 1,
+                "type": "upgrade",
+                "from": "entry"
+            },
+            {
+                "rules": [
+                    {
+                        "description": "Weapons with [LANCE] in their profile are known as Lance weapons. Each time an attack is made with such a weapon, if the bearer made a Charge move this turn, add 1 to that attack\u2019s Wound roll.",
+                        "id": "2ebc-abdf-8129-6c57",
+                        "name": "Lance",
+                        "hidden": false,
+                        "page": 25
+                    }
+                ],
+                "profiles": [
+                    {
+                        "characteristics": [
+                            {
+                                "$text": "Melee",
+                                "name": "Range",
+                                "typeId": "914c-b413-91e3-a132"
+                            },
+                            {
+                                "$text": "6",
+                                "name": "A",
+                                "typeId": "2337-daa1-6682-b110"
+                            },
+                            {
+                                "$text": "4+",
+                                "name": "WS",
+                                "typeId": "95d1-95f-45b4-11d6"
+                            },
+                            {
+                                "$text": "8",
+                                "name": "S",
+                                "typeId": "ab33-d393-96ce-ccba"
+                            },
+                            {
+                                "$text": "0",
+                                "name": "AP",
+                                "typeId": "41a0-1301-112a-e2f2"
+                            },
+                            {
+                                "$text": "1",
+                                "name": "D",
+                                "typeId": "3254-9fe6-d824-513e"
+                            },
+                            {
+                                "$text": "Lance",
+                                "name": "Keywords",
+                                "typeId": "893f-9000-ccf7-648e"
+                            }
+                        ],
+                        "id": "1d9f-854-46b2-6ead",
+                        "name": "Armoured Hull",
+                        "hidden": false,
+                        "typeId": "8a40-4aaa-c780-9046",
+                        "typeName": "Melee Weapons",
+                        "from": "entry"
+                    }
+                ],
+                "id": "lzg2u255e3rb3jquw79",
+                "name": "Armoured Hull",
+                "entryId": "2b90-3730-69d-d0c0::2c44-6fba-92b0-d1eb",
+                "number": 1,
+                "type": "upgrade",
+                "from": "entry"
+            }
+        ],
+        "categories": [
+            {
+                "id": "dbd4-63-af05-998",
+                "entryId": "dbd4-63-af05-998",
+                "name": "Vehicle",
+                "primary": true
+            },
+            {
+                "id": "63f1-e6e8-f6f6-a4f0",
+                "name": "Aircraft",
+                "entryId": "63f1-e6e8-f6f6-a4f0",
+                "primary": false
+            },
+            {
+                "id": "75e8-57c4-40e3-1817",
+                "name": "Transport",
+                "entryId": "75e8-57c4-40e3-1817",
+                "primary": false
+            },
+            {
+                "id": "c619-2086-bbcf-69c9",
+                "name": "Fly",
+                "entryId": "c619-2086-bbcf-69c9",
+                "primary": false
+            },
+            {
+                "id": "aff3-d6a3-2a95-9dc",
+                "name": "Imperium",
+                "entryId": "aff3-d6a3-2a95-9dc",
+                "primary": false
+            },
+            {
+                "id": "9f46-e832-a098-c067",
+                "name": "Caestus Assault Ram",
+                "entryId": "9f46-e832-a098-c067",
+                "primary": false
+            },
+            {
+                "id": "6e7-40c-58d9-e402",
+                "name": "Faction: Adeptus Astartes",
+                "entryId": "6e7-40c-58d9-e402",
+                "primary": false
+            }
+        ],
+        "rules": [
+            {
+                "description": "Some models have 'Deadly Demise x' listed in their abilities. When such a model is destroyed, roll one D6 before removing it from play (if such a model is a TRANSPORT, roll before any embarked models disembark). On a 6, each unit within 6\" of that model suffers a number of mortal wounds denoted by 'x' (if this is a random number, roll separately for each unit within 6\").",
+                "id": "b68a-5ded-65ac-98c",
+                "name": "Deadly Demise D6",
+                "hidden": false,
+                "page": 23
+            },
+            {
+                "description": "Some AIRCRAFT models have 'Hover' listed in their abilities. When you are instructed to Declare Battle Formations, before doing anything else, you must first declare which models from your army with this ability will be in Hover mode.\n\nIf a model is in Hover mode,  then until the end of the battle, its Move characteristic is changed to 20\", it loses the AIRCRAFT keyword and it loses all associated rules for being an AlRCRAFT model. Models in Hover mode do not start the battle in Reserves, but you can choose to place them into Strategic Reserves following the normal rules if you wish.",
+                "id": "eec5-5f54-9c03-c305",
+                "name": "Hover",
+                "hidden": false,
+                "page": 53
+            },
+            {
+                "description": "If your Army Faction is Adeptus Astartes, at the start of your Command phase, select one unit from your opponent\u2019s army. Until the start of your next Command phase, each time a model from your army with this ability makes an attack that targets that enemy unit, you can re-roll the Hit roll.",
+                "id": "3b76-4053-ece9-6e7d",
+                "name": "Oath of Moment",
+                "hidden": false
+            }
+        ]
+    },
+    {
+        "id": "77d3-7836-c62b-6b9",
+        "name": "Chaplain Venerable Dreadnought [Legends]",
+        "from": "entry",
+        "cost": 150,
+        "stats": {
+            "characteristics": [
+                {
+                    "$text": "6\"",
+                    "name": "M",
+                    "typeId": "e703-ecb6-5ce7-aec1"
+                },
+                { "$text": "9", "name": "T", "typeId": "d29d-cf75-fc2d-34a4" },
+                { "$text": "2+", "name": "SV", "typeId": "450-a17e-9d5e-29da" },
+                { "$text": "8", "name": "W", "typeId": "750a-a2ec-90d3-21fe" },
+                {
+                    "$text": "6+",
+                    "name": "LD",
+                    "typeId": "58d2-b879-49c7-43bc"
+                },
+                { "$text": "3", "name": "OC", "typeId": "bef7-942a-1a23-59f8" }
+            ],
+            "id": "77d3-7836-c62b-6b9",
+            "name": "Chaplain Venerable Dreadnought [Legends]",
+            "hidden": false,
+            "typeId": "c547-1836-d8a-ff4f",
+            "typeName": "Unit",
+            "from": "entry"
+        },
+        "abilities": [
+            {
+                "characteristics": [
+                    {
+                        "$text": "5+",
+                        "name": "Description",
+                        "typeId": "9b8f-694b-e5e-b573"
+                    }
+                ],
+                "id": "f7d3-5636-5e66-ccbf",
+                "name": "Invulnerable Save",
+                "hidden": false,
+                "typeId": "9cc3-6d83-4dd3-9b64",
+                "typeName": "Abilities",
+                "from": "entry"
+            },
+            {
+                "characteristics": [
+                    {
+                        "$text": "Once per battle, at the start of any phase,\u00a0you can select one friendly Adeptus Astartes unit that is\u00a0Battle-shocked and within 12\" of this model. That unit is no\u00a0longer Battle-shocked.",
+                        "name": "Description",
+                        "typeId": "9b8f-694b-e5e-b573"
+                    }
+                ],
+                "id": "846a-b76-5a41-5066",
+                "name": "Spiritual Leader",
+                "hidden": false,
+                "typeId": "9cc3-6d83-4dd3-9b64",
+                "typeName": "Abilities",
+                "from": "entry"
+            }
+        ],
+        "weapons": [
+            {
+                "rules": [
+                    {
+                        "description": "Weapons with [IGNORES COVER] in their profile are known as Ignores Cover weapons. Each time an attack is made with such a weapon, the target cannot have the Benefit of Cover against that attack.",
+                        "id": "4640-43e7-30b-215a",
+                        "name": "Ignores Cover",
+                        "hidden": false,
+                        "page": 25
+                    },
+                    {
+                        "description": "Weapons with [TORRENT] in their profile are known as Torrent weapons. Each time an attack is made with such a weapon, that attack automatically hits the target.",
+                        "id": "5edf-d619-23e0-9b56",
+                        "name": "Torrent",
+                        "hidden": false,
+                        "page": 25
+                    }
+                ],
+                "profiles": [
+                    {
+                        "characteristics": [
+                            {
+                                "$text": "12\"",
+                                "name": "Range",
+                                "typeId": "9896-9419-16a1-92fc"
+                            },
+                            {
+                                "$text": "2D6",
+                                "name": "A",
+                                "typeId": "3bb-c35f-f54-fb08"
+                            },
+                            {
+                                "$text": "N/A",
+                                "name": "BS",
+                                "typeId": "94d-8a98-cf90-183e"
+                            },
+                            {
+                                "$text": "6",
+                                "name": "S",
+                                "typeId": "2229-f494-25db-c5d3"
+                            },
+                            {
+                                "$text": "-1",
+                                "name": "AP",
+                                "typeId": "9ead-8a10-520-de15"
+                            },
+                            {
+                                "$text": "1",
+                                "name": "D",
+                                "typeId": "a354-c1c8-a745-f9e3"
+                            },
+                            {
+                                "$text": "Ignores Cover, Torrent",
+                                "name": "Keywords",
+                                "typeId": "7f1b-8591-2fcf-d01c"
+                            }
+                        ],
+                        "id": "8d3a-cb6f-3178-c550",
+                        "name": "Dreadnought Inferno Cannon",
+                        "hidden": false,
+                        "typeId": "f77d-b953-8fa4-b762",
+                        "typeName": "Ranged Weapons",
+                        "from": "entry"
+                    }
+                ],
+                "id": "lzg0v45ox4oolky253c",
+                "name": "Dreadnought Inferno Cannon",
+                "entryId": "d8c8-3031-2faa-22a6::5d4d-4a88-393a-75c8",
+                "entryGroupId": "d8c8-3031-2faa-22a6::a2e1-5df8-84dc-4e4d",
+                "number": 1,
+                "type": "upgrade",
+                "from": "group",
+                "group": "Left Arm Weapon"
+            },
+            {
+                "selections": [
+                    {
+                        "profiles": [
+                            {
+                                "characteristics": [
+                                    {
+                                        "$text": "Melee",
+                                        "name": "Range",
+                                        "typeId": "914c-b413-91e3-a132"
+                                    },
+                                    {
+                                        "$text": "5",
+                                        "name": "A",
+                                        "typeId": "2337-daa1-6682-b110"
+                                    },
+                                    {
+                                        "$text": "3+",
+                                        "name": "WS",
+                                        "typeId": "95d1-95f-45b4-11d6"
+                                    },
+                                    {
+                                        "$text": "12",
+                                        "name": "S",
+                                        "typeId": "ab33-d393-96ce-ccba"
+                                    },
+                                    {
+                                        "$text": "-2",
+                                        "name": "AP",
+                                        "typeId": "41a0-1301-112a-e2f2"
+                                    },
+                                    {
+                                        "$text": "3",
+                                        "name": "D",
+                                        "typeId": "3254-9fe6-d824-513e"
+                                    },
+                                    {
+                                        "$text": "-",
+                                        "name": "Keywords",
+                                        "typeId": "893f-9000-ccf7-648e"
+                                    }
+                                ],
+                                "id": "cf7c-9c6f-3235-6c6d",
+                                "name": "Dreadnought Combat Weapon",
+                                "hidden": false,
+                                "typeId": "8a40-4aaa-c780-9046",
+                                "typeName": "Melee Weapons",
+                                "from": "entry"
+                            }
+                        ],
+                        "id": "lzg0v46nbcdfo7v8tx",
+                        "name": "Dreadnought Combat Weapon",
+                        "entryId": "d8c8-3031-2faa-22a6::f442-6f55-c4e1-fd21::2693-7478-d47c-9699",
+                        "number": 1,
+                        "type": "upgrade",
+                        "from": "entry"
+                    },
+                    {
+                        "rules": [
+                            {
+                                "description": "Weapons with [IGNORES COVER] in their profile are known as Ignores Cover weapons. Each time an attack is made with such a weapon, the target cannot have the Benefit of Cover against that attack.",
+                                "id": "4640-43e7-30b-215a",
+                                "name": "Ignores Cover",
+                                "hidden": false,
+                                "page": 25
+                            },
+                            {
+                                "description": "Weapons with [TORRENT] in their profile are known as Torrent weapons. Each time an attack is made with such a weapon, that attack automatically hits the target.",
+                                "id": "5edf-d619-23e0-9b56",
+                                "name": "Torrent",
+                                "hidden": false,
+                                "page": 25
+                            }
+                        ],
+                        "profiles": [
+                            {
+                                "characteristics": [
+                                    {
+                                        "$text": "12\"",
+                                        "name": "Range",
+                                        "typeId": "9896-9419-16a1-92fc"
+                                    },
+                                    {
+                                        "$text": "D6",
+                                        "name": "A",
+                                        "typeId": "3bb-c35f-f54-fb08"
+                                    },
+                                    {
+                                        "$text": "N/A",
+                                        "name": "BS",
+                                        "typeId": "94d-8a98-cf90-183e"
+                                    },
+                                    {
+                                        "$text": "5",
+                                        "name": "S",
+                                        "typeId": "2229-f494-25db-c5d3"
+                                    },
+                                    {
+                                        "$text": "-1",
+                                        "name": "AP",
+                                        "typeId": "9ead-8a10-520-de15"
+                                    },
+                                    {
+                                        "$text": "1",
+                                        "name": "D",
+                                        "typeId": "a354-c1c8-a745-f9e3"
+                                    },
+                                    {
+                                        "$text": "Ignores Cover, Torrent",
+                                        "name": "Keywords",
+                                        "typeId": "7f1b-8591-2fcf-d01c"
+                                    }
+                                ],
+                                "id": "8158-c8b3-6940-5199",
+                                "name": "Heavy Flamer",
+                                "hidden": false,
+                                "typeId": "f77d-b953-8fa4-b762",
+                                "typeName": "Ranged Weapons",
+                                "from": "entry"
+                            }
+                        ],
+                        "id": "lzg0v46nbowg2zcjwzc",
+                        "name": "Heavy Flamer",
+                        "entryId": "d8c8-3031-2faa-22a6::a5ac-426a-e4fc-5769::b3e6-f7a7-8357-2055",
+                        "number": 1,
+                        "type": "upgrade",
+                        "from": "entry"
+                    }
+                ],
+                "id": "lzg0v45okitnxf7cvog",
+                "name": "Dreadnought Combat Weapon w/ Heavy Flamer",
+                "entryId": "d8c8-3031-2faa-22a6::29cd-bc09-eb7a-6bd8",
+                "entryGroupId": "d8c8-3031-2faa-22a6::be2e-6219-2549-e502",
+                "number": 1,
+                "type": "upgrade",
+                "from": "group",
+                "group": "Right Arm Weapon"
+            }
+        ],
+        "categories": [
+            {
+                "id": "dbd4-63-af05-998",
+                "entryId": "dbd4-63-af05-998",
+                "name": "Vehicle",
+                "primary": true
+            },
+            {
+                "id": "6dda-e157-334d-e93a",
+                "name": "Walker",
+                "entryId": "6dda-e157-334d-e93a",
+                "primary": false
+            },
+            {
+                "id": "aff3-d6a3-2a95-9dc",
+                "name": "Imperium",
+                "entryId": "aff3-d6a3-2a95-9dc",
+                "primary": false
+            },
+            {
+                "id": "c97c-376-e2e0-1dd2",
+                "name": "Dreadnought",
+                "entryId": "c97c-376-e2e0-1dd2",
+                "primary": false
+            },
+            {
+                "id": "7e5c-674f-433f-c73c",
+                "name": "Chaplain Venerable Dreadnought",
+                "entryId": "7e5c-674f-433f-c73c",
+                "primary": false
+            },
+            {
+                "id": "6e7-40c-58d9-e402",
+                "name": "Faction: Adeptus Astartes",
+                "entryId": "6e7-40c-58d9-e402",
+                "primary": false
+            }
+        ],
+        "rules": [
+            {
+                "description": "Some models have 'Deadly Demise x' listed in their abilities. When such a model is destroyed, roll one D6 before removing it from play (if such a model is a TRANSPORT, roll before any embarked models disembark). On a 6, each unit within 6\" of that model suffers a number of mortal wounds denoted by 'x' (if this is a random number, roll separately for each unit within 6\").",
+                "id": "b68a-5ded-65ac-98c",
+                "name": "Deadly Demise 1",
+                "hidden": false,
+                "page": 23
+            },
+            {
+                "description": "If your Army Faction is Adeptus Astartes, at the start of your Command phase, select one unit from your opponent\u2019s army. Until the start of your next Command phase, each time a model from your army with this ability makes an attack that targets that enemy unit, you can re-roll the Hit roll.",
+                "id": "3b76-4053-ece9-6e7d",
+                "name": "Oath of Moment",
+                "hidden": false
+            }
+        ]
+    }
+]
