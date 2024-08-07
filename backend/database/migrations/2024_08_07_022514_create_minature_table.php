@@ -16,13 +16,13 @@ return new class extends Migration
             $table->string('newRecruitId')->unique()->required();
             $table->string('name')->required();
             $table->string('from')->required();
-            $table->integer('cost')->required();
-            $table->integer('movement')->required();
-            $table->integer('toughness')->required();
-            $table->integer('armor_save')->required();
-            $table->integer('wounds')->required();
-            $table->integer('leadership')->required();
-            $table->integer('objective_control')->required();
+            $table->string('cost')->required();
+            $table->string('movement')->required();
+            $table->string('toughness')->required();
+            $table->string('armor_save')->required();
+            $table->string('wounds')->required();
+            $table->string('leadership')->required();
+            $table->string('objective_control')->required();
             $table->timestamps();
         });
     }

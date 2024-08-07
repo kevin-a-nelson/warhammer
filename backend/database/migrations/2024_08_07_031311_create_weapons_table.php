@@ -18,12 +18,12 @@ return new class extends Migration
             $table->string('typeId')->required(); 
             $table->string('typeName')->required(); 
             $table->string('from')->required();
-            $table->integer('range')->required();
+            $table->string('range')->required();
             $table->string('attack')->required();
             $table->string('combat_skill')->required();
-            $table->integer('strength')->required();
-            $table->integer('armor_penetration')->required();
-            $table->integer('damage')->required();
+            $table->string('strength')->required();
+            $table->string('armor_penetration')->required();
+            $table->string('damage')->required();
             $table->timestamps();
         });
     }
