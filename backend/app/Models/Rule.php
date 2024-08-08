@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Rule extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'description',
+        'newRecruitId',
+        'name',
+        'page',
+    ];
 }

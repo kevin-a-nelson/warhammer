@@ -1,0 +1,620 @@
+{
+    "roster": {
+        "costs": [
+            { "name": "pts", "typeId": "51b2-306e-1021-d207", "value": 70 }
+        ],
+        "costLimits": [
+            { "name": "pts", "typeId": "51b2-306e-1021-d207", "value": 2000 }
+        ],
+        "forces": [
+            {
+                "rules": [
+                    {
+                        "description": "If your Army Faction is Adeptus Astartes, at the start of your Command phase, select one unit from your opponent’s army. Until the start of your next Command phase, each time a model from your army with this ability makes an attack that targets that enemy unit, you can re-roll the Hit roll.",
+                        "id": "3b76-4053-ece9-6e7d",
+                        "name": "Oath of Moment",
+                        "hidden": false
+                    }
+                ],
+                "selections": [
+                    {
+                        "selections": [
+                            {
+                                "id": "lzjcpbhit3f8lh46ntm",
+                                "name": "Incursion (1000 Point limit)",
+                                "entryId": "7380-3e40-6ed6-b7cc::d62d-db22-4893-4bc0",
+                                "entryGroupId": "7380-3e40-6ed6-b7cc::b960-4789-a3a6-59cb",
+                                "number": 1,
+                                "type": "upgrade",
+                                "from": "group",
+                                "group": "Battle Size"
+                            }
+                        ],
+                        "categories": [
+                            {
+                                "id": "4ac9-fd30-1e3d-b249",
+                                "entryId": "4ac9-fd30-1e3d-b249",
+                                "name": "Configuration",
+                                "primary": true
+                            }
+                        ],
+                        "id": "lzg0uhssa0gr7fgcv99",
+                        "name": "Battle Size",
+                        "entryId": "7380-3e40-6ed6-b7cc::564e-fbc6-5266-3ea4",
+                        "number": 1,
+                        "type": "upgrade",
+                        "from": "entry"
+                    },
+                    {
+                        "selections": [
+                            {
+                                "profiles": [
+                                    {
+                                        "characteristics": [
+                                            {
+                                                "$text": "At the start of your Command phase, you can select one of the Combat Doctrines listed below. Until the start of your next Command phase, that Combat Doctrine is active and its effects apply to all Adeptus Astartes units from your army with this ability. You can only select each Combat Doctrine once per battle.\n\n\nDEVASTATOR DOCTRINE \nThis unit is eligible to shoot in a turn in which it Advanced.\n\nTACTICAL DOCTRINE\nThis unit is eligible to shoot and declare a charge in a turn in which it Fell Back.\n\nASSAULT DOCTRINE\nThis unit is eligible to declare a charge in a turn in which it Advanced.",
+                                                "name": "Description",
+                                                "typeId": "9b8f-694b-e5e-b573"
+                                            }
+                                        ],
+                                        "id": "97dc-f938-f6e9-7c79",
+                                        "name": "Combat Doctrines",
+                                        "hidden": false,
+                                        "typeId": "9cc3-6d83-4dd3-9b64",
+                                        "typeName": "Abilities",
+                                        "from": "entry"
+                                    }
+                                ],
+                                "categories": [
+                                    {
+                                        "id": "5a61-81ac-eb7c-a87e",
+                                        "name": "Grenades",
+                                        "entryId": "5a61-81ac-eb7c-a87e",
+                                        "primary": false
+                                    }
+                                ],
+                                "id": "lzjcpbhj09fo6s1nzmha",
+                                "name": "Gladius Task Force",
+                                "entryId": "e9ed-6763-ea0d-39fe::b79-add5-1d1e-f700::d2dc-693e-b491-b16d",
+                                "entryGroupId": "e9ed-6763-ea0d-39fe::b79-add5-1d1e-f700::821b-9477-6c47-eab5",
+                                "number": 1,
+                                "type": "upgrade",
+                                "from": "group",
+                                "group": "Detachment"
+                            }
+                        ],
+                        "categories": [
+                            {
+                                "id": "4ac9-fd30-1e3d-b249",
+                                "entryId": "4ac9-fd30-1e3d-b249",
+                                "name": "Configuration",
+                                "primary": true
+                            }
+                        ],
+                        "id": "lzg0uhsqvu7vwz9lgfi",
+                        "name": "Detachment",
+                        "entryId": "e9ed-6763-ea0d-39fe::82cb-ba1-1aae-3b1d",
+                        "number": 1,
+                        "type": "upgrade",
+                        "from": "entry"
+                    },
+                    {
+                        "selections": [
+                            {
+                                "categories": [
+                                    {
+                                        "id": "4ac9-fd30-1e3d-b249",
+                                        "name": "Configuration",
+                                        "entryId": "4ac9-fd30-1e3d-b249",
+                                        "primary": false
+                                    }
+                                ],
+                                "id": "lzjcpbhke5n2dq6f9lw",
+                                "name": "Legends are visible",
+                                "entryId": "882-5a00-1760-a2be::892f-57ca-d650-7199::9ed-cbf4-bfe5-90bf",
+                                "number": 1,
+                                "type": "upgrade",
+                                "from": "entry"
+                            },
+                            {
+                                "id": "lzjcpbhkif54xm0gzu",
+                                "name": "Unaligned Forces are visible",
+                                "entryId": "882-5a00-1760-a2be::985-e753-2e94-859::2973-ea51-7f8d-5403",
+                                "number": 1,
+                                "type": "upgrade",
+                                "from": "entry"
+                            },
+                            {
+                                "id": "lzjcpbhlbmk4ezsbx2",
+                                "name": "Unaligned Fortifications are visible",
+                                "entryId": "882-5a00-1760-a2be::4d37-22c-a45c-64f8::e916-2cf4-a49d-b8c4",
+                                "number": 1,
+                                "type": "upgrade",
+                                "from": "entry"
+                            },
+                            {
+                                "categories": [
+                                    {
+                                        "id": "4ac9-fd30-1e3d-b249",
+                                        "name": "Configuration",
+                                        "entryId": "4ac9-fd30-1e3d-b249",
+                                        "primary": false
+                                    }
+                                ],
+                                "id": "lzjcpbhly1fo73vzqi",
+                                "name": "Imperial Knights are visible",
+                                "entryId": "24ae-928e-4edf-9e68::e82c-6f8c-2b97-a287",
+                                "number": 1,
+                                "type": "upgrade",
+                                "from": "entry"
+                            },
+                            {
+                                "categories": [
+                                    {
+                                        "id": "4ac9-fd30-1e3d-b249",
+                                        "name": "Configuration",
+                                        "entryId": "4ac9-fd30-1e3d-b249",
+                                        "primary": false
+                                    }
+                                ],
+                                "id": "lzjcpbhlxbavup331qo",
+                                "name": "Agents of the Imperium are visible",
+                                "entryId": "9e96-1101-afff-63b7::e08b-2448-5606-fefb",
+                                "number": 1,
+                                "type": "upgrade",
+                                "from": "entry"
+                            },
+                            {
+                                "id": "lzjcpbhl2qqt10an0d7",
+                                "name": "Titans are visible",
+                                "entryId": "7117-d2ee-6c97-a4ea::f26b-79db-80e0-3a3b",
+                                "number": 1,
+                                "type": "upgrade",
+                                "from": "entry"
+                            }
+                        ],
+                        "categories": [
+                            {
+                                "id": "4ac9-fd30-1e3d-b249",
+                                "entryId": "4ac9-fd30-1e3d-b249",
+                                "name": "Configuration",
+                                "primary": true
+                            }
+                        ],
+                        "id": "lzg0uhsuka4yarekp1",
+                        "name": "Show/Hide Options",
+                        "entryId": "882-5a00-1760-a2be::e8ef-836a-a9d1-901d",
+                        "number": 1,
+                        "type": "upgrade",
+                        "from": "entry"
+                    },
+                    {
+                        "rules": [
+                            {
+                                "description": "While a Bodyguard unit contains a Leader, it is known as an Attached unit and, with the exception of rules that are triggered when units are destroyed (pg 12), it is treated as a single unit for all rules purposes. Each time an attack targets an Attached unit, until the attacking unit has resolved all of its attacks, you must use the Toughness characteristic of the Bodyguard models in that unit, even if a Leader in that unit has a different Toughness characteristic. Each time an attack sucessfully wounds an Attached unit, that attack cannot be allocated to a Character model in that unit, even if that Character model has lost one or more wounds or has already had attacks allocated to it this phase. As soon as the last Bodyguard model in an Attached unit has been destroyed, any attacks made against that unit that have yet to be allocated can then be allocated to Character models in that unit.",
+                                "id": "b4dd-3e1f-41cb-218f",
+                                "name": "Leader",
+                                "hidden": false,
+                                "page": 39
+                            },
+                            {
+                                "description": "If your Army Faction is Adeptus Astartes, at the start of your Command phase, select one unit from your opponent’s army. Until the start of your next Command phase, each time a model from your army with this ability makes an attack that targets that enemy unit, you can re-roll the Hit roll.",
+                                "id": "3b76-4053-ece9-6e7d",
+                                "name": "Oath of Moment",
+                                "hidden": false
+                            }
+                        ],
+                        "profiles": [
+                            {
+                                "characteristics": [
+                                    {
+                                        "$text": "6\"",
+                                        "name": "M",
+                                        "typeId": "e703-ecb6-5ce7-aec1"
+                                    },
+                                    {
+                                        "$text": "4",
+                                        "name": "T",
+                                        "typeId": "d29d-cf75-fc2d-34a4"
+                                    },
+                                    {
+                                        "$text": "3+",
+                                        "name": "SV",
+                                        "typeId": "450-a17e-9d5e-29da"
+                                    },
+                                    {
+                                        "$text": "4",
+                                        "name": "W",
+                                        "typeId": "750a-a2ec-90d3-21fe"
+                                    },
+                                    {
+                                        "$text": "5+",
+                                        "name": "LD",
+                                        "typeId": "58d2-b879-49c7-43bc"
+                                    },
+                                    {
+                                        "$text": "1",
+                                        "name": "OC",
+                                        "typeId": "bef7-942a-1a23-59f8"
+                                    }
+                                ],
+                                "id": "fd84-6766-5354-6512",
+                                "name": "Judiciar",
+                                "hidden": false,
+                                "typeId": "c547-1836-d8a-ff4f",
+                                "typeName": "Unit",
+                                "from": "entry"
+                            },
+                            {
+                                "characteristics": [
+                                    {
+                                        "$text": "While this model is leading a unit, that unit has the Fights First ability.",
+                                        "name": "Description",
+                                        "typeId": "9b8f-694b-e5e-b573"
+                                    }
+                                ],
+                                "id": "e8ec-5b94-53b2-1229",
+                                "name": "Tempormortis",
+                                "hidden": false,
+                                "typeId": "9cc3-6d83-4dd3-9b64",
+                                "typeName": "Abilities",
+                                "from": "entry"
+                            },
+                            {
+                                "characteristics": [
+                                    {
+                                        "$text": "Each time this model destroys an enemy Character model, until the end of the battle, add 1 to the Attacks characteristic of its executioner relic blade.",
+                                        "name": "Description",
+                                        "typeId": "9b8f-694b-e5e-b573"
+                                    }
+                                ],
+                                "id": "81e6-9c44-9af6-e6a5",
+                                "name": "Silent Fury",
+                                "hidden": false,
+                                "typeId": "9cc3-6d83-4dd3-9b64",
+                                "typeName": "Abilities",
+                                "from": "entry"
+                            },
+                            {
+                                "characteristics": [
+                                    {
+                                        "$text": "4+\n* This model has a 4+ invulnerable save against melee attacks.",
+                                        "name": "Description",
+                                        "typeId": "9b8f-694b-e5e-b573"
+                                    }
+                                ],
+                                "id": "3a9c-eadb-624f-6d6b",
+                                "name": "Invulnerable Save*",
+                                "hidden": false,
+                                "typeId": "9cc3-6d83-4dd3-9b64",
+                                "typeName": "Abilities",
+                                "from": "entry"
+                            },
+                            {
+                                "characteristics": [
+                                    {
+                                        "$text": "This model can be attached to the following units:\n\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Infernus Squad\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad",
+                                        "name": "Description",
+                                        "typeId": "9b8f-694b-e5e-b573"
+                                    }
+                                ],
+                                "id": "9839-fe55-3fc2-c9e7",
+                                "name": "Leader",
+                                "hidden": false,
+                                "typeId": "9cc3-6d83-4dd3-9b64",
+                                "typeName": "Abilities",
+                                "from": "entry"
+                            }
+                        ],
+                        "selections": [
+                            {
+                                "rules": [
+                                    {
+                                        "description": "Weapons with [DEVASTATING WOUNDS] in their profile are known as Devastating Wounds weapons. Each time an attack is made with such a weapon, if that attack scores a Critical Wound, no saving throw of any kind can be made against that attack (including invulnerable saving throws). Such attacks are only allocated to models after all other attacks made by the attacking unit have been allocated and resolved",
+                                        "id": "be1e-ac8e-1e2c-3528",
+                                        "name": "Devastating Wounds",
+                                        "hidden": false,
+                                        "page": 28
+                                    },
+                                    {
+                                        "description": "Weapons with [PRECISION] in their profile are known as Precision weapons. Each time an attack made with such a weapon successfully wounds an Attached unit, if a Character model in that unit is visible to the attacking model, the attacking model’s player can choose to have that attack allocated to that Character model instead of following the normal attack sequence.",
+                                        "id": "9143-31ae-e0a6-6007",
+                                        "name": "Precision",
+                                        "hidden": false,
+                                        "page": 26
+                                    }
+                                ],
+                                "profiles": [
+                                    {
+                                        "characteristics": [
+                                            {
+                                                "$text": "Melee",
+                                                "name": "Range",
+                                                "typeId": "914c-b413-91e3-a132"
+                                            },
+                                            {
+                                                "$text": "5",
+                                                "name": "A",
+                                                "typeId": "2337-daa1-6682-b110"
+                                            },
+                                            {
+                                                "$text": "2+",
+                                                "name": "WS",
+                                                "typeId": "95d1-95f-45b4-11d6"
+                                            },
+                                            {
+                                                "$text": "7",
+                                                "name": "S",
+                                                "typeId": "ab33-d393-96ce-ccba"
+                                            },
+                                            {
+                                                "$text": "-2",
+                                                "name": "AP",
+                                                "typeId": "41a0-1301-112a-e2f2"
+                                            },
+                                            {
+                                                "$text": "2",
+                                                "name": "D",
+                                                "typeId": "3254-9fe6-d824-513e"
+                                            },
+                                            {
+                                                "$text": "Devastating Wounds, Precision",
+                                                "name": "Keywords",
+                                                "typeId": "893f-9000-ccf7-648e"
+                                            }
+                                        ],
+                                        "id": "107-bb7c-6062-858c",
+                                        "name": "Executioner Relic Blade",
+                                        "hidden": false,
+                                        "typeId": "8a40-4aaa-c780-9046",
+                                        "typeName": "Melee Weapons",
+                                        "from": "entry"
+                                    }
+                                ],
+                                "id": "lzjcpx6s56bqmhqjukk",
+                                "name": "Executioner Relic Blade",
+                                "entryId": "219b-58dd-df81-b99e::4459-9b5f-1a58-4403",
+                                "number": 1,
+                                "type": "upgrade",
+                                "from": "entry"
+                            },
+                            {
+                                "rules": [
+                                    {
+                                        "description": "Weapons with [PISTOL] in their profile are known as Pistols. If a unit contains any models equipped with Pistols, that unit is eligible to shoot in its controlling player’s Shooting phase even while it is within Engagement Range of one or more enemy units. When such a unit is selected to shoot, it can only resolve attacks using its Pistols and can only target one of the enemy units it is within Engagement Range of. In such circumstances, a Pistol can target an enemy unit even if other friendly units are within Engagement Range of the same enemy unit. \n\nIf a model is equipped with one or more Pistols, unless it is a MONSTER or VEHICLE model, it can either shoot with its Pistols or with all of its other ranged weapons. Declare whether such a model will shoot with its Pistols or its other ranged weapons before selecting targets.",
+                                        "id": "8bf7-8812-923d-29e4",
+                                        "name": "Pistol",
+                                        "hidden": false,
+                                        "page": 25
+                                    }
+                                ],
+                                "profiles": [
+                                    {
+                                        "characteristics": [
+                                            {
+                                                "$text": "18\"",
+                                                "name": "Range",
+                                                "typeId": "9896-9419-16a1-92fc"
+                                            },
+                                            {
+                                                "$text": "1",
+                                                "name": "A",
+                                                "typeId": "3bb-c35f-f54-fb08"
+                                            },
+                                            {
+                                                "$text": "3+",
+                                                "name": "BS",
+                                                "typeId": "94d-8a98-cf90-183e"
+                                            },
+                                            {
+                                                "$text": "5",
+                                                "name": "S",
+                                                "typeId": "2229-f494-25db-c5d3"
+                                            },
+                                            {
+                                                "$text": "-1",
+                                                "name": "AP",
+                                                "typeId": "9ead-8a10-520-de15"
+                                            },
+                                            {
+                                                "$text": "2",
+                                                "name": "D",
+                                                "typeId": "a354-c1c8-a745-f9e3"
+                                            },
+                                            {
+                                                "$text": "Pistol",
+                                                "name": "Keywords",
+                                                "typeId": "7f1b-8591-2fcf-d01c"
+                                            }
+                                        ],
+                                        "id": "cb64-ddb1-cbc3-3621",
+                                        "name": "Absolvor Bolt Pistol",
+                                        "hidden": false,
+                                        "typeId": "f77d-b953-8fa4-b762",
+                                        "typeName": "Ranged Weapons",
+                                        "from": "entry"
+                                    }
+                                ],
+                                "id": "lzjcpx6sn2babfnaewr",
+                                "name": "Absolver Bolt Pistol",
+                                "entryId": "219b-58dd-df81-b99e::3125-bf-a712-d29f::a490-361-c9c4-afeb",
+                                "number": 1,
+                                "type": "upgrade",
+                                "from": "entry"
+                            }
+                        ],
+                        "costs": [
+                            {
+                                "name": "pts",
+                                "typeId": "51b2-306e-1021-d207",
+                                "value": 70
+                            }
+                        ],
+                        "categories": [
+                            {
+                                "id": "9cfd-1c32-585f-7d5c",
+                                "entryId": "9cfd-1c32-585f-7d5c",
+                                "name": "Character",
+                                "primary": true
+                            },
+                            {
+                                "id": "cf47-a0d7-7207-29dc",
+                                "name": "Infantry",
+                                "entryId": "cf47-a0d7-7207-29dc",
+                                "primary": false
+                            },
+                            {
+                                "id": "aff3-d6a3-2a95-9dc",
+                                "name": "Imperium",
+                                "entryId": "aff3-d6a3-2a95-9dc",
+                                "primary": false
+                            },
+                            {
+                                "id": "5179-8ede-45e3-49a2",
+                                "name": "Tacticus",
+                                "entryId": "5179-8ede-45e3-49a2",
+                                "primary": false
+                            },
+                            {
+                                "id": "258c-ef74-d5f1-3a61",
+                                "name": "Judiciar",
+                                "entryId": "258c-ef74-d5f1-3a61",
+                                "primary": false
+                            },
+                            {
+                                "id": "6e7-40c-58d9-e402",
+                                "name": "Faction: Adeptus Astartes",
+                                "entryId": "6e7-40c-58d9-e402",
+                                "primary": false
+                            }
+                        ],
+                        "id": "lzjcpx6qy3b66kutyh",
+                        "name": "Judiciar",
+                        "entryId": "219b-58dd-df81-b99e::8dcb-987c-1ab4-b976",
+                        "number": 1,
+                        "type": "model",
+                        "from": "entry"
+                    }
+                ],
+                "categories": [
+                    {
+                        "name": "Uncategorized",
+                        "id": "lzjcpbgdg35dnfdj1c",
+                        "primary": false,
+                        "entryId": "(No Category)"
+                    },
+                    {
+                        "name": "Configuration",
+                        "id": "lzjcpbgde6c3mh6ixd",
+                        "primary": false,
+                        "entryId": "4ac9-fd30-1e3d-b249"
+                    },
+                    {
+                        "name": "Epic Hero",
+                        "id": "lzjcpbgd5ih92alpcbs",
+                        "primary": false,
+                        "entryId": "4f3a-f0f7-6647-348d"
+                    },
+                    {
+                        "name": "Character",
+                        "id": "lzjcpbgd82aezxymxsr",
+                        "primary": false,
+                        "entryId": "9cfd-1c32-585f-7d5c"
+                    },
+                    {
+                        "name": "Battleline",
+                        "id": "lzjcpbgdt45ee7grfs",
+                        "primary": false,
+                        "entryId": "e338-111e-d0c6-b687"
+                    },
+                    {
+                        "name": "Infantry",
+                        "id": "lzjcpbgd3huabdugfdn",
+                        "primary": false,
+                        "entryId": "cf47-a0d7-7207-29dc"
+                    },
+                    {
+                        "name": "Swarm",
+                        "id": "lzjcpbgd9vj78oslck",
+                        "primary": false,
+                        "entryId": "b00b-5bae-444f-964e"
+                    },
+                    {
+                        "name": "Mounted",
+                        "id": "lzjcpbgdqwf5y5vapc",
+                        "primary": false,
+                        "entryId": "14a0-40c9-2748-ae6e"
+                    },
+                    {
+                        "name": "Beast",
+                        "id": "lzjcpbge6gzf3880ry2",
+                        "primary": false,
+                        "entryId": "4c3e-9310-a516-3590"
+                    },
+                    {
+                        "name": "Monster",
+                        "id": "lzjcpbgegylxs78pjep",
+                        "primary": false,
+                        "entryId": "9693-cf84-fe69-37a9"
+                    },
+                    {
+                        "name": "Vehicle",
+                        "id": "lzjcpbge8phfp8y0m2c",
+                        "primary": false,
+                        "entryId": "dbd4-63-af05-998"
+                    },
+                    {
+                        "name": "Drone",
+                        "id": "lzjcpbge8n6po9vhhva",
+                        "primary": false,
+                        "entryId": "2471-e2e0-3f55-d6cb"
+                    },
+                    {
+                        "name": "Dedicated Transport",
+                        "id": "lzjcpbgeln12hvllvlc",
+                        "primary": false,
+                        "entryId": "ba07-411c-2832-1f79"
+                    },
+                    {
+                        "name": "Fortification",
+                        "id": "lzjcpbgejfvdrx9se1l",
+                        "primary": false,
+                        "entryId": "19d7-9c74-2140-5851"
+                    },
+                    {
+                        "name": "Unit",
+                        "id": "lzjcpbgers1vptu29zr",
+                        "primary": false,
+                        "entryId": "1160-70ae-a862-b1a8"
+                    },
+                    {
+                        "name": "Allied Units",
+                        "id": "lzjcpbge73tmprbz0a9",
+                        "primary": false,
+                        "entryId": "887b-ab87-92a2-20f5"
+                    },
+                    {
+                        "name": "Illegal Units",
+                        "id": "lzjcpbgesxwwsydill",
+                        "primary": false,
+                        "entryId": "(Illegal Units)"
+                    }
+                ],
+                "id": "lzg0uhr3k1sal3czb5r",
+                "name": "Army Roster",
+                "entryId": "bb9d-299a-ed60-2d8a",
+                "catalogueId": "e0af-67df-9d63-8fb7",
+                "catalogueRevision": 55,
+                "catalogueName": "Imperium - Space Marines"
+            }
+        ],
+        "id": "lzjcpbga3yq4693mgme",
+        "name": "space marine 2",
+        "battleScribeVersion": 2.03,
+        "generatedBy": "https://newrecruit.eu",
+        "gameSystemId": "sys-352e-adc2-7639-d6a9",
+        "gameSystemName": "Warhammer 40,000 10th Edition",
+        "gameSystemRevision": 11,
+        "xmlns": "http://www.battlescribe.net/schema/rosterSchema"
+    }
+}

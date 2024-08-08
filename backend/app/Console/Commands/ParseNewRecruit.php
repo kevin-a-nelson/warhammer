@@ -2,8 +2,13 @@
 
 namespace App\Console\Commands;
 
-use Storage;
+use App\Models\Ability;
+use App\Models\Category;
+use App\Models\Minature;
+use App\Models\Weapon;
+use App\Models\Rule;
 use Illuminate\Console\Command;
+use Storage;
 
 class ParseNewRecruit extends Command
 {
@@ -89,10 +94,74 @@ class ParseNewRecruit extends Command
             ];
 
             $models[] = $model;
+
+
+
         }
 
-        $myfile = fopen("app/Console/Commands/test.json", "w");
-        fwrite($myfile, json_encode($models));
-        fclose($myfile);
+        $minature = $models[0];
+
+        $newMinature = Minature::create([
+            'newRecruitId' => $minature['id'],
+            'name' => $minature['name'],
+            'from' => $minature['from'],
+            'cost' => $minature['cost'],
+            'movement' => $minature['stats']['characteristics'][0]['$text'],
+            'toughness' => $minature['stats']['characteristics'][1]['$text'],
+            'armor_save' => $minature['stats']['characteristics'][2]['$text'],
+            'wounds' => $minature['stats']['characteristics'][3]['$text'],
+            'leadership' => $minature['stats']['characteristics'][4]['$text'],
+            'objective_control' => $minature['stats']['characteristics'][5]['$text'],
+        ]);
+
+        // dd($newMinature->id);
+
+        foreach($minature['abilities'] as $ability) {
+            $newAbility = Ability::create([
+                'newRecruitId' => $ability['id'],
+                'name' => $ability['name'],
+                'description' => $ability["characteristics"][0]['$text'],
+                'from' => $ability['from'],
+            ]);
+        }
+
+        // foreach($minature['weapons'] as $weapon) {
+        //     Weapon::create([
+        //         'newRecruitId' => $weapon['profiles'][0]['id'],
+        //         'name' => $weapon['profiles'][0]['name'],
+        //         'typeId' => $weapon['profiles'][0]['typeId'],
+        //         'typeName' => $weapon['profiles'][0]['typeName'],
+        //         'from' => $weapon['profiles'][0]['from'],
+        //         'range' => $weapon['profiles'][0]['characteristics'][0]['$text'],
+        //         'attack' => $weapon['profiles'][0]['characteristics'][0]['$text'],
+        //         'combat_skill' => $weapon['profiles'][0]['characteristics'][0]['$text'],
+        //         'strength' => $weapon['profiles'][0]['characteristics'][0]['$text'],
+        //         'armor_penetration' => $weapon['profiles'][0]['characteristics'][0]['$text'],
+        //         'damage' => $weapon['profiles'][0]['characteristics'][0]['$text'],
+        //     ]);
+        // }
+
+        // foreach($minature['categories'] as $category) {
+        //     Category::create([
+        //         'newRecruitId' => $category['id'],
+        //         'name' => $category['name'],
+        //         'primary' => $category['primary'],
+        //     ]);
+        // }
+
+        // foreach($minature['rules'] as $rule) {
+        //     Rule::create([
+        //         'description' => $rule['description'],
+        //         'newRecruitId' => $rule['id'],
+        //         'name' => $rule['name'],
+        //         'page' => $rule['page'] ?? null,
+        //     ]);
+        // }
+
+        // $minature->save();
+
+        // $myfile = fopen("app/Console/Commands/test.json", "w");
+        // fwrite($myfile, json_encode($models));
+        // fclose($myfile);
     }
 }

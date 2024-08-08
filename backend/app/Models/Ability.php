@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Ability extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'newRecruitId',
+        'description',
+        'from'
+    ];
 }
