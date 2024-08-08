@@ -15,4 +15,9 @@ class Ability extends Model
         'description',
         'from'
     ];
+
+    public function minatures()
+    {
+        return $this->belongsToMany(Minature::class, 'ability_minature');
+    }
 }

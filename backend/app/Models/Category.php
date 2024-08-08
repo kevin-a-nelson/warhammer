@@ -14,4 +14,9 @@ class Category extends Model
         'name',
         'primary'
     ];
+
+    public function minatures()
+    {
+        return $this->belongsToMany(Minature::class, 'category_minature');
+    }
 }

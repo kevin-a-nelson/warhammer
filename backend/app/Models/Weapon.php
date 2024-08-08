@@ -22,4 +22,9 @@ class Weapon extends Model
         'armor_penetration',
         'damage'
     ];
+
+    public function minatures()
+    {
+        return $this->belongsToMany(Minature::class, 'minature_weapon');
+    }
 }

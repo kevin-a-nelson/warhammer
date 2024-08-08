@@ -123,40 +123,60 @@ class ParseNewRecruit extends Command
                 'description' => $ability["characteristics"][0]['$text'],
                 'from' => $ability['from'],
             ]);
+
+            $newMinature->abilities()->attach($newAbility->id, [
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
         }
 
-        // foreach($minature['weapons'] as $weapon) {
-        //     Weapon::create([
-        //         'newRecruitId' => $weapon['profiles'][0]['id'],
-        //         'name' => $weapon['profiles'][0]['name'],
-        //         'typeId' => $weapon['profiles'][0]['typeId'],
-        //         'typeName' => $weapon['profiles'][0]['typeName'],
-        //         'from' => $weapon['profiles'][0]['from'],
-        //         'range' => $weapon['profiles'][0]['characteristics'][0]['$text'],
-        //         'attack' => $weapon['profiles'][0]['characteristics'][0]['$text'],
-        //         'combat_skill' => $weapon['profiles'][0]['characteristics'][0]['$text'],
-        //         'strength' => $weapon['profiles'][0]['characteristics'][0]['$text'],
-        //         'armor_penetration' => $weapon['profiles'][0]['characteristics'][0]['$text'],
-        //         'damage' => $weapon['profiles'][0]['characteristics'][0]['$text'],
-        //     ]);
-        // }
+        foreach($minature['weapons'] as $weapon) {
+            $newWeapon = Weapon::create([
+                'newRecruitId' => $weapon['profiles'][0]['id'],
+                'name' => $weapon['profiles'][0]['name'],
+                'typeId' => $weapon['profiles'][0]['typeId'],
+                'typeName' => $weapon['profiles'][0]['typeName'],
+                'from' => $weapon['profiles'][0]['from'],
+                'range' => $weapon['profiles'][0]['characteristics'][0]['$text'],
+                'attack' => $weapon['profiles'][0]['characteristics'][0]['$text'],
+                'combat_skill' => $weapon['profiles'][0]['characteristics'][0]['$text'],
+                'strength' => $weapon['profiles'][0]['characteristics'][0]['$text'],
+                'armor_penetration' => $weapon['profiles'][0]['characteristics'][0]['$text'],
+                'damage' => $weapon['profiles'][0]['characteristics'][0]['$text'],
+            ]);
 
-        // foreach($minature['categories'] as $category) {
-        //     Category::create([
-        //         'newRecruitId' => $category['id'],
-        //         'name' => $category['name'],
-        //         'primary' => $category['primary'],
-        //     ]);
-        // }
+            $newMinature->weapons()->attach($newWeapon->id, [
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
 
-        // foreach($minature['rules'] as $rule) {
-        //     Rule::create([
-        //         'description' => $rule['description'],
-        //         'newRecruitId' => $rule['id'],
-        //         'name' => $rule['name'],
-        //         'page' => $rule['page'] ?? null,
-        //     ]);
-        // }
+        foreach($minature['categories'] as $category) {
+            $newCategory = Category::create([
+                'newRecruitId' => $category['id'],
+                'name' => $category['name'],
+                'primary' => $category['primary'],
+            ]);
+
+            $newMinature->categories()->attach($newCategory->id, [
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
+
+        foreach($minature['rules'] as $rule) {
+            $newRule = Rule::create([
+                'description' => $rule['description'],
+                'newRecruitId' => $rule['id'],
+                'name' => $rule['name'],
+                'page' => $rule['page'] ?? null,
+            ]);
+
+            $newMinature->rules()->attach($newRule->id, [
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
 
         // $minature->save();
 

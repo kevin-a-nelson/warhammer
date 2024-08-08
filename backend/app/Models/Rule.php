@@ -15,4 +15,9 @@ class Rule extends Model
         'name',
         'page',
     ];
+
+    public function minatures()
+    {
+        return $this->belongsToMany(Minature::class, 'minature_rule');
+    }
 }

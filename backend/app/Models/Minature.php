@@ -21,4 +21,24 @@ class Minature extends Model
         'leadership',
         'objective_control'
     ];
+
+    public function abilities()
+    {
+        return $this->belongsToMany(Ability::class, 'ability_minature');
+    }
+
+    public function weapons()
+    {
+        return $this->belongsToMany(Weapon::class, 'minature_weapon');
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'category_minature');
+    }
+
+    public function rules()
+    {
+        return $this->belongsToMany(Rule::class, 'minature_rule');
+    }
 }
