@@ -16,4 +16,9 @@ class Board extends Model
     {
         return $this->belongsToMany(User::class, 'board_user', 'board_id', 'user_id');
     }
+
+    public function minatures(): BelongsToMany
+    {
+        return $this->belongsToMany(Minature::class, 'board_minature', 'board_id', 'minature_id');
+    }
 }

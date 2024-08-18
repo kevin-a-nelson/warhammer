@@ -1,32 +1,36 @@
 <script setup>
-import { reactive, computed, defineProps, defineEmits } from 'vue'
+import { reactive, computed, defineProps, defineEmits, onMounted } from 'vue'
+
+onMounted(() => {
+  console.log(props.minature)
+})
 
 // props
 const props = defineProps({
-  model: Object
+  minature: Object
 })
 
-const emits = defineEmits(['setActiveModel'])
+const emits = defineEmits(['setActiveMinature'])
 
-const modelStyle = computed(() => {
-    return { left: `${props.model.xCordinate}px`, top: `${props.model.yCordinate}px`, width: `${props.model.size}px`, height: `${props.model.size}px` }
+const minatureStyle = computed(() => {
+    return { left: `${props.minature.xCord}px`, top: `${props.minature.yCord}px`, width: `${40}px`, height: `${40}px` }
 })
 
 function handleClick() {
-  emits('setActiveModel', props.model.id)
+  emits('setActiveMinature', props.minature.id)
 }
 </script>
 
 
 <template>
-    <div class="model" :style="modelStyle" @click.stop="handleClick">
+    <div class="minature" :style="minatureStyle" @click.stop="handleClick">
         <img src="../assets/spaceMarine.jpg">
     </div>
 </template>
 
 <style>
 
-.model {
+.minature {
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -40,7 +44,7 @@ function handleClick() {
     cursor: pointer; /* Added to indicate clickable */
 }
 
-.model img {
+.minature img {
     width: 150%;
     height: 150%;
     object-fit: cover;

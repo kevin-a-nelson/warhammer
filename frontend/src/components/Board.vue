@@ -1,12 +1,12 @@
 <script setup>
-import { ref, reactive, onMounted } from 'vue'
-import Model from './Model.vue'
+import { ref, reactive, onMounted, toRefs } from 'vue'
+import Minature from './Minature.vue'
 
-// Data
-const models = reactive([
-  { id: 1, xCordinate: 0, yCordinate: 0, size: 50},
-  { id: 2, xCordinate: 50, yCordinate: 0, size: 50}
-])
+// const Minatures = toRef('miniatures')
+
+const props = defineProps({
+  minatures: Array
+})
 
 const activeModelId = ref(null)
 const boardElement = ref(null)
@@ -26,7 +26,7 @@ function moveModel(e) {
     return
   }
 
-  const activeModelIndex = models.findIndex(model => model.id === activeModelId.value);
+  const activeModelIndex = minatures.findIndex(minature => minature.id === activeModelId.value);
 
   if (activeModelIndex === -1) {
     return
@@ -46,7 +46,7 @@ function moveModel(e) {
 
 <template>
   <div id="board" @click="moveModel">
-    <Model v-for="model in models" :key="model.id" :model="model" @setActiveModel="setActiveModel" />
+    <Minature v-for="minature in minatures" :key="minature.id" :minature="minature" @setActiveModel="setActiveModel" />
   </div>
 </template>
 

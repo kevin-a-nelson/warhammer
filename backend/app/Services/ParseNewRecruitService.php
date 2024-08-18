@@ -73,6 +73,9 @@ class ParseNewRecruitService
             $models[] = $model;
         }
 
+        $xCord = 0;
+        $yCord = 0;
+
         foreach ($models as $minature) {
 
             $newMinature = Minature::firstOrCreate([
@@ -89,9 +92,14 @@ class ParseNewRecruitService
             ]);
 
             $newMinature->boards()->syncWithoutDetaching([$board_id => [
+                'xCord' => $xCord,
+                'yCord' => $yCord,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]]);
+
+            $xCord += 100;
+            $yCord += 100;
 
             foreach ($minature['abilities'] as $ability) {
 
