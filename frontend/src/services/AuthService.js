@@ -18,7 +18,7 @@ class AuthService {
         );
       }
 
-      router.push('/board');
+      router.push('/boards');
     } catch (error) {
       console.error("Error logging in:", error);
       throw error;
@@ -27,13 +27,14 @@ class AuthService {
 
   async logout() {
     try {
-      await axios.post(`${API_URL}/logout`, {}, {
+      await axios.post(`${API_URL}/logout`, 
+      {}, 
+      {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         }
       });
 
-      router.push('/login');
       localStorage.removeItem("access_token");
     } catch (error) {
       console.error("Error logging in:", error);
