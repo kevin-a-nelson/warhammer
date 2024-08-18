@@ -88,6 +88,11 @@ class ParseNewRecruitService
                 'objective_control' => $minature['stats']['characteristics'][5]['$text'],
             ]);
 
+            $newMinature->boards()->syncWithoutDetaching([$board_id => [
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]]);
+
             foreach ($minature['abilities'] as $ability) {
 
 

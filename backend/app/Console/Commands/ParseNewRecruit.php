@@ -107,6 +107,10 @@ class ParseNewRecruit extends Command
                 'objective_control' => $minature['stats']['characteristics'][5]['$text'],
             ]);
 
+            $newMinature->boards()->syncWithoutDetaching([$newMinature->id => [
+                'board_id' => 1,
+            ]]);
+
             foreach ($minature['abilities'] as $ability) {
 
                 $newAbility = Ability::firstOrCreate([

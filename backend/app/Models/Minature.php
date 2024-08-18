@@ -41,4 +41,9 @@ class Minature extends Model
     {
         return $this->belongsToMany(Rule::class, 'minature_rule');
     }
+
+    public function boards()
+    {
+        return $this->belongsToMany(Board::class, 'board_minature');
+    }
 }
