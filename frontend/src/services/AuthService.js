@@ -11,14 +11,11 @@ class AuthService {
         password,
       });
 
-      if (response.data.access_token) {
-        localStorage.setItem(
-          "access_token",
-          response.data.access_token
-        );
-      }
+      localStorage.setItem("access_token", response.data.access_token);
 
-      router.push('/boards');
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+
+      router.push("/boards");
     } catch (error) {
       console.error("Error logging in:", error);
       throw error;
@@ -27,13 +24,15 @@ class AuthService {
 
   async logout() {
     try {
-      await axios.post(`${API_URL}/logout`, 
-      {}, 
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+      await axios.post(
+        `${API_URL}/logout`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          },
         }
-      });
+      );
 
       localStorage.removeItem("access_token");
     } catch (error) {

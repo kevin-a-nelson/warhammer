@@ -5,7 +5,8 @@ import { onMounted, ref } from 'vue';
 let boards = ref([]);
 
  onMounted(async () => {
-  await BoardService.getBoards(1)
+  let userId = JSON.parse(localStorage.getItem('user')).id;
+  await BoardService.getBoards(userId)
     .then(response => {
       boards.value = response;
     })

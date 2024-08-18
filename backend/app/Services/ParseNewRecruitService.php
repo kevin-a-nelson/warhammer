@@ -1,37 +1,18 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Services;
 
 use App\Models\Ability;
 use App\Models\Category;
 use App\Models\Minature;
 use App\Models\Weapon;
+use App\Models\MinatureWeapon;
 use App\Models\Rule;
-use Illuminate\Console\Command;
-use Storage;
 
-class ParseNewRecruit extends Command
+class ParseNewRecruitService
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'app:parse-new-recruit';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Command description';
-
-    /**
-     * Execute the console command.
-     */
-    public function handle()
+    public static function parse($json, $board_id)
     {
-        $json = file_get_contents("app/Console/Commands/Aeldari.json");
         $json = json_decode($json, true);
 
         $selections = $json["roster"]["forces"][0]["selections"];
@@ -109,6 +90,7 @@ class ParseNewRecruit extends Command
 
             foreach ($minature['abilities'] as $ability) {
 
+
                 $newAbility = Ability::firstOrCreate([
                     'newRecruitId' => $ability['id'],
                     'name' => $ability['name'],
@@ -138,11 +120,11 @@ class ParseNewRecruit extends Command
                     'damage' => $weapon['profiles'][0]['characteristics'][0]['$text'],
                 ]);
 
-
-                $newMinature->weapons()->syncWithoutDetaching([$newWeapon->id => [
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ]]);
+                MinatureWeapon::firstOrCreate([
+                    'minature_id' => $newMinature->id,
+                    'weapon_id' => $newWeapon->id,
+                    'board_id' => $board_id,
+                ]);
             }
 
             foreach ($minature['categories'] as $category) {
