@@ -15,17 +15,11 @@ export default {
 
   methods: {
     async logOut() {
-      try {
-        const response = await AuthService.logout();
-        console.log('Login successful:', response);
-        this.$router.push('/login');
-      } catch (error) {
-        console.error('Logout failed:', error);
-      }
+        await AuthService.logout();
     }
   },
   mounted() {
-    if(localStorage.getItem('user') === null) {
+    if(localStorage.getItem('access_token') === null) {
       this.$router.push('/login');
     }
   }

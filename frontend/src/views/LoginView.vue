@@ -29,15 +29,7 @@ export default {
 
   methods: {
     async login() {
-      try {
-        const response = await AuthService.login(this.email, this.password);
-        console.log('Login successful:', response);
-        this.$router.push('/board');
-        // Redirect to a protected route or handle successful login
-      } catch (error) {
-        console.error('Login failed:', error);
-        // Handle login error
-      }
+        await AuthService.login(this.email, this.password);
     }
   }
 }
