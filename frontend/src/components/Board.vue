@@ -37,8 +37,6 @@ function moveModel(e) {
   var x = e.clientX - rect.left - models[activeModelIndex].size / 2;
   var y = e.clientY - rect.top - models[activeModelIndex].size / 2;
 
-  console.log(x, y)
-
   models[activeModelIndex].xCordinate = x;
   models[activeModelIndex].yCordinate = y;
 

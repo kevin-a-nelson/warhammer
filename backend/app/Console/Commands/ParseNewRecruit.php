@@ -178,8 +178,6 @@ class ParseNewRecruit extends Command
             ]);
         }
 
-        // $minature->save();
-
         // $myfile = fopen("app/Console/Commands/test.json", "w");
         // fwrite($myfile, json_encode($models));
         // fclose($myfile);
