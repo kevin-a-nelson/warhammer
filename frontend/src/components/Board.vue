@@ -11,6 +11,8 @@ const props = defineProps({
 const activeMinatureId = ref(null)
 const boardElement = ref(null)
 const clickPosition = ref(null)
+const minatureSize = ref(100);
+const minatureMovement = ref(null);
 
 // Methods
 function onSetActiveMinature(id) {
@@ -36,6 +38,15 @@ const movementRadius = reactive({
   ]
 })
 
+const circleStyle = reactive({
+  left: `${clickPosition?.x - minatureSize}px`,
+  top: `${clickPosition?.y - minatureSize}px`,
+  width: `${minatureMovement.value}px`,
+  height: `${minatureMovement.value}px`,
+  background: '#ddd',
+  borderRadius: '50%'
+})
+
 // Lifecycle hooks
 onMounted(() => {
   boardElement.value = document.getElementById('board');
@@ -54,7 +65,9 @@ onMounted(() => {
     var rect = boardElement.value.getBoundingClientRect();
 
     var minatureSize = props.minatures[activeMinatureIndex].size;
-    var minatureMovement = parseInt(props.minatures[activeMinatureIndex].movement, 10);
+    // var minatureMovement = parseInt(props.minatures[activeMinatureIndex].movement, 10) * 3;
+    
+    minatureMovement.value = 300;
 
     var x = e.clientX - rect.left - minatureSize / 2;
     var y = e.clientY - rect.top - minatureSize / 2;
@@ -64,12 +77,10 @@ onMounted(() => {
 
     var distance = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
 
-    var maxRadius = 150 - minatureSize / 2;
-
-    if(distance > 150) { // 150 is half of the circle's diameter
+    if(distance > (minatureMovement.value / 2 - minatureSize / 2)) { 
       var angle = Math.atan2(yDiff, xDiff);
-      x = clickPosition.value.x + 150 * Math.cos(angle);
-      y = clickPosition.value.y + 150 * Math.sin(angle);
+      x = clickPosition.value.x + (minatureMovement.value / 2 - minatureSize / 2) * Math.cos(angle);
+      y = clickPosition.value.y + (minatureMovement.value / 2 - minatureSize / 2) * Math.sin(angle);
     }
 
     props.minatures[activeMinatureIndex].xCord = x;
@@ -81,7 +92,12 @@ onMounted(() => {
 
 <template>
   <div id="board">
-    <div class="circle" v-show="clickPosition" :style="{ top: `${clickPosition?.y - 100}px`, left: `${clickPosition?.x - 100}px` }"></div>
+    <div class="circle" v-show="clickPosition" :style="{ 
+        top: `${clickPosition?.y - minatureSize}px`, 
+        left: `${clickPosition?.x - minatureSize}px`,
+        width: `300px`,
+        height: `300px`
+      }"></div>
     <Minature v-for="minature in minatures" :key="minature.id" :minature="minature"
       :isActive="activeMinatureId === minature.id" @setActiveMinature="onSetActiveMinature" @click="handleClick($event, minature)"/>
   </div>
@@ -91,12 +107,11 @@ onMounted(() => {
 
 .circle {
   position: absolute;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle at center, rgba(0,255,255,0.4) 0%, rgba(0,255,255,0) 70%);
-  border: 2px solid aqua;
+  /* background: radial-gradient(circle at center, rgba(0,255,255,0.4) 0%, rgba(0,255,255,0) 70%); */
+  background: #ddd;
+  /* border: 0px solid aqua; */
   border-radius: 50%;
-  box-shadow: 0 0 10px aqua, 0 0 5px darkcyan;
+  /* box-shadow: 0 0 10px aqua, 0 0 5px darkcyan; */
 }
 
 #board {
