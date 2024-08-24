@@ -19,7 +19,8 @@ class Minature extends Model
         'armor_save',
         'wounds',
         'leadership',
-        'objective_control'
+        'objective_control',
+        'size'
     ];
 
     public function abilities()

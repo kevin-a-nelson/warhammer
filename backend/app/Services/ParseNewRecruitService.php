@@ -89,6 +89,7 @@ class ParseNewRecruitService
                 'wounds' => $minature['stats']['characteristics'][3]['$text'],
                 'leadership' => $minature['stats']['characteristics'][4]['$text'],
                 'objective_control' => $minature['stats']['characteristics'][5]['$text'],
+                'size' => rand(50, 100),
             ]);
 
             $newMinature->boards()->syncWithoutDetaching([$board_id => [
