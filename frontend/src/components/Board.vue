@@ -13,6 +13,7 @@ const boardElement = ref(null)
 const clickPosition = ref(null)
 const minatureSize = ref(100);
 const minatureMovement = ref(null);
+const circleOffset = ref(0);
 
 // Methods
 function onSetActiveMinature(id) {
@@ -50,6 +51,7 @@ const circleStyle = reactive({
 // Lifecycle hooks
 onMounted(() => {
   boardElement.value = document.getElementById('board');
+  
 
   boardElement.value.addEventListener('mousemove', (e) => {
     if (!activeMinatureId.value) {
@@ -63,18 +65,13 @@ onMounted(() => {
     }
 
     var rect = boardElement.value.getBoundingClientRect();
-
     var minatureSize = props.minatures[activeMinatureIndex].size;
-    // var minatureMovement = parseInt(props.minatures[activeMinatureIndex].movement, 10) * 3;
-    
-    minatureMovement.value = 300;
-
+    minatureMovement.value = 200;
+    circleOffset.value = (((300 - minatureMovement.value) / 100 * minatureSize / 2))
     var x = e.clientX - rect.left - minatureSize / 2;
     var y = e.clientY - rect.top - minatureSize / 2;
-
     var xDiff = x - clickPosition.value.x;
     var yDiff = y - clickPosition.value.y;
-
     var distance = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
 
     if(distance > (minatureMovement.value / 2 - minatureSize / 2)) { 
@@ -93,10 +90,10 @@ onMounted(() => {
 <template>
   <div id="board">
     <div class="circle" v-show="clickPosition" :style="{ 
-        top: `${clickPosition?.y - minatureSize}px`, 
-        left: `${clickPosition?.x - minatureSize}px`,
-        width: `300px`,
-        height: `300px`
+        top: `${clickPosition?.y - minatureSize + circleOffset}px`, 
+        left: `${clickPosition?.x - minatureSize + circleOffset}px`,
+        width: `${minatureMovement}px`,
+        height: `${minatureMovement}px`
       }"></div>
     <Minature v-for="minature in minatures" :key="minature.id" :minature="minature"
       :isActive="activeMinatureId === minature.id" @setActiveMinature="onSetActiveMinature" @click="handleClick($event, minature)"/>
@@ -107,11 +104,8 @@ onMounted(() => {
 
 .circle {
   position: absolute;
-  /* background: radial-gradient(circle at center, rgba(0,255,255,0.4) 0%, rgba(0,255,255,0) 70%); */
   background: #ddd;
-  /* border: 0px solid aqua; */
   border-radius: 50%;
-  /* box-shadow: 0 0 10px aqua, 0 0 5px darkcyan; */
 }
 
 #board {

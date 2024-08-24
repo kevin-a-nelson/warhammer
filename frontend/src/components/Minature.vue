@@ -37,10 +37,7 @@ function handleClick() {
   position: absolute;
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.3);
-  /* box-shadow: 0 0 0 5px black inset;  */
   cursor: pointer;
-  /* z-index: 99; */
-  /* Added to indicate clickable */
 }
 
 .minature img {
