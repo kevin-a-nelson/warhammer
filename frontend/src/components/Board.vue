@@ -15,6 +15,7 @@ const minatureSize = ref(100);
 const minatureMovement = ref(null);
 const circleOffset = ref(0);
 const zoomLevel = ref(1);
+const zoomOrigin = ref({ x: 0, y: 0 });
 
 // Methods
 function onSetActiveMinature(id) {
@@ -39,30 +40,15 @@ function handleBoardClick(event) {
   }
 }
 
-const movementRadius = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
 
-const circleStyle = reactive({
-  left: `${clickPosition?.x - minatureSize}px`,
-  top: `${clickPosition?.y - minatureSize}px`,
-  width: `${minatureMovement.value}px`,
-  height: `${minatureMovement.value}px`,
-  background: '#ddd',
-  borderRadius: '50%'
-})
-
-const zoomIn = () => {
+const zoomIn = (x, y) => {
   zoomLevel.value = Math.min(zoomLevel.value + 0.1, 3); // Max zoom level 3
+  zoomOrigin.value = { x, y };
 };
 
-const zoomOut = () => {
+const zoomOut = (x, y) => {
   zoomLevel.value = Math.max(zoomLevel.value - 0.1, 0.5); // Min zoom level 0.5
+  zoomOrigin.value = { x, y };
 };
 
 // Lifecycle hooks
@@ -70,10 +56,11 @@ onMounted(() => {
   boardElement.value = document.getElementById('board-container');
   
     boardElement.value.addEventListener('wheel', (e) => {
+      console.log(e)
     if (e.deltaY < 0) {
-      // zoomIn();
+      zoomIn(e.clientX, e.clientY);
     } else {
-      // zoomOut();
+      zoomOut(e.clientX, e.clientY);
     }
   });
 
@@ -117,7 +104,7 @@ onMounted(() => {
 
 <template>
   <div id="board-container">
-    <div id="board" @click="handleBoardClick($event)">
+    <div id="board" @click="handleBoardClick($event)" :style="{transform: `scale(${zoomLevel})`}">
         <div class="circle" v-show="clickPosition" :style="{ 
             top: `${clickPosition?.y - minatureSize + circleOffset}px`, 
             left: `${clickPosition?.x - minatureSize + circleOffset}px`,
@@ -139,7 +126,6 @@ onMounted(() => {
 }
 
 #board {
-  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -153,6 +139,7 @@ onMounted(() => {
   position: relative;
   border: 1px solid;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 </style>
