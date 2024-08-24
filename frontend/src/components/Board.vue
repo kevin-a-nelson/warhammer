@@ -14,10 +14,10 @@ const clickPosition = ref(null)
 const minatureSize = ref(100);
 const minatureMovement = ref(null);
 const circleOffset = ref(0);
+const zoomLevel = ref(1);
 
 // Methods
 function onSetActiveMinature(id) {
-
   if(activeMinatureId.value != null) {
     activeMinatureId.value = null;
     clickPosition.value = null;
@@ -26,8 +26,17 @@ function onSetActiveMinature(id) {
   activeMinatureId.value = id;
 }
 
-function handleClick(event, minature) { // Add this method
-  clickPosition.value = { x: minature.xCord, y: minature.yCord }
+function handleMinatureClick(event, minature) { // Add this method
+  if(activeMinatureId.value) {
+    clickPosition.value = { x: minature.xCord, y: minature.yCord }
+  }
+}
+
+function handleBoardClick(event) {
+  if(activeMinatureId.value) {
+    activeMinatureId.value = null;
+    clickPosition.value = null;
+  }
 }
 
 const movementRadius = reactive({
@@ -48,10 +57,29 @@ const circleStyle = reactive({
   borderRadius: '50%'
 })
 
+const zoomIn = () => {
+  zoomLevel.value = Math.min(zoomLevel.value + 0.1, 3); // Max zoom level 3
+};
+
+const zoomOut = () => {
+  zoomLevel.value = Math.max(zoomLevel.value - 0.1, 0.5); // Min zoom level 0.5
+};
+
 // Lifecycle hooks
 onMounted(() => {
-  boardElement.value = document.getElementById('board');
+  boardElement.value = document.getElementById('board-container');
   
+    boardElement.value.addEventListener('wheel', (e) => {
+    if (e.deltaY < 0) {
+      // zoomIn();
+    } else {
+      // zoomOut();
+    }
+  });
+
+  window.addEventListener('wheel', (e) => {
+      e.preventDefault();
+  }, { passive: false });
 
   boardElement.value.addEventListener('mousemove', (e) => {
     if (!activeMinatureId.value) {
@@ -66,7 +94,7 @@ onMounted(() => {
 
     var rect = boardElement.value.getBoundingClientRect();
     var minatureSize = props.minatures[activeMinatureIndex].size;
-    minatureMovement.value = 200;
+    minatureMovement.value = 283;
     circleOffset.value = (((300 - minatureMovement.value) / 100 * minatureSize / 2))
     var x = e.clientX - rect.left - minatureSize / 2;
     var y = e.clientY - rect.top - minatureSize / 2;
@@ -88,15 +116,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="board">
-    <div class="circle" v-show="clickPosition" :style="{ 
-        top: `${clickPosition?.y - minatureSize + circleOffset}px`, 
-        left: `${clickPosition?.x - minatureSize + circleOffset}px`,
-        width: `${minatureMovement}px`,
-        height: `${minatureMovement}px`
-      }"></div>
-    <Minature v-for="minature in minatures" :key="minature.id" :minature="minature"
-      :isActive="activeMinatureId === minature.id" @setActiveMinature="onSetActiveMinature" @click="handleClick($event, minature)"/>
+  <div id="board-container">
+    <div id="board" @click="handleBoardClick($event)">
+        <div class="circle" v-show="clickPosition" :style="{ 
+            top: `${clickPosition?.y - minatureSize + circleOffset}px`, 
+            left: `${clickPosition?.x - minatureSize + circleOffset}px`,
+            width: `${minatureMovement}px`,
+            height: `${minatureMovement}px`
+          }"></div>
+        <Minature v-for="minature in minatures" :key="minature.id" :minature="minature"
+          :isActive="activeMinatureId === minature.id" @setActiveMinature="onSetActiveMinature" @click="handleMinatureClick($event, minature)"/>
+    </div>
   </div>
 </template>
 
@@ -109,10 +139,20 @@ onMounted(() => {
 }
 
 #board {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#board-container {
   height: 90vh;
   width: 1000px;
   position: relative;
   border: 1px solid;
   margin: 0 auto;
 }
+
 </style>
