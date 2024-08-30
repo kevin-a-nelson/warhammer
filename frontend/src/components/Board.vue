@@ -19,7 +19,7 @@ const zoomOrigin = ref({ x: 0, y: 0 });
 
 // Methods
 function onSetActiveMinature(id) {
-  if(activeMinatureId.value != null) {
+  if (activeMinatureId.value != null) {
     activeMinatureId.value = null;
     clickPosition.value = null;
     return;
@@ -28,13 +28,13 @@ function onSetActiveMinature(id) {
 }
 
 function handleMinatureClick(event, minature) { // Add this method
-  if(activeMinatureId.value) {
+  if (activeMinatureId.value) {
     clickPosition.value = { x: minature.xCord, y: minature.yCord }
   }
 }
 
 function handleBoardClick(event) {
-  if(activeMinatureId.value) {
+  if (activeMinatureId.value) {
     activeMinatureId.value = null;
     clickPosition.value = null;
   }
@@ -51,74 +51,84 @@ const zoomOut = (x, y) => {
   zoomOrigin.value = { x, y };
 };
 
+const onMouseover = (event) => {
+  var rect = boardElement.value.getBoundingClientRect();
+  var realX = event.x - rect.left;
+  var realY = event.y - rect.top;
+  console.log(event.x, event.y, realX, realY);
+}
+
 // Lifecycle hooks
 onMounted(() => {
   boardElement.value = document.getElementById('board-container');
-  
-    boardElement.value.addEventListener('wheel', (e) => {
-      console.log(e)
+
+  boardElement.value.addEventListener('wheel', (e) => {
+    var rect = boardElement.value.getBoundingClientRect();
+    var realX = e.x - rect.left;
+    var realY = e.y - rect.top;
     if (e.deltaY < 0) {
-      zoomIn(e.clientX, e.clientY);
+      zoomIn(realX, realY);
     } else {
-      zoomOut(e.clientX, e.clientY);
+      zoomOut(realX, realY);
     }
   });
 
-  window.addEventListener('wheel', (e) => {
-      e.preventDefault();
-  }, { passive: false });
-
   boardElement.value.addEventListener('mousemove', (e) => {
+    var rect = boardElement.value.getBoundingClientRect();
+    var realX = e.x - rect.left;
+    var realY = e.y - rect.top;
+    console.log(realX, realY);
     if (!activeMinatureId.value) {
       return
     }
-
-    const activeMinatureIndex = props.minatures.findIndex(minature => minature.id === activeMinatureId.value);
-
-    if (activeMinatureIndex === -1) {
-      return
-    }
-
-    var rect = boardElement.value.getBoundingClientRect();
-    var minatureSize = props.minatures[activeMinatureIndex].size;
-    minatureMovement.value = 283;
-    circleOffset.value = (((300 - minatureMovement.value) / 100 * minatureSize / 2))
-    var x = e.clientX - rect.left - minatureSize / 2;
-    var y = e.clientY - rect.top - minatureSize / 2;
-    var xDiff = x - clickPosition.value.x;
-    var yDiff = y - clickPosition.value.y;
-    var distance = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
-
-    if(distance > (minatureMovement.value / 2 - minatureSize / 2)) { 
-      var angle = Math.atan2(yDiff, xDiff);
-      x = clickPosition.value.x + (minatureMovement.value / 2 - minatureSize / 2) * Math.cos(angle);
-      y = clickPosition.value.y + (minatureMovement.value / 2 - minatureSize / 2) * Math.sin(angle);
-    }
-
-    props.minatures[activeMinatureIndex].xCord = x;
-    props.minatures[activeMinatureIndex].yCord = y;
   });
+
+  //   const activeMinatureIndex = props.minatures.findIndex(minature => minature.id === activeMinatureId.value);
+
+  //   if (activeMinatureIndex === -1) {
+  //     return
+  //   }
+
+  //   var rect = boardElement.value.getBoundingClientRect();
+  //   var minatureSize = props.minatures[activeMinatureIndex].size;
+  //   minatureMovement.value = 283;
+  //   circleOffset.value = (((300 - minatureMovement.value) / 100 * minatureSize / 2))
+  //   var x = e.clientX - rect.left - minatureSize / 2;
+  //   var y = e.clientY - rect.top - minatureSize / 2;
+  //   var xDiff = x - clickPosition.value.x;
+  //   var yDiff = y - clickPosition.value.y;
+  //   var distance = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+
+  //   if(distance > (minatureMovement.value / 2 - minatureSize / 2)) { 
+  //     var angle = Math.atan2(yDiff, xDiff);
+  //     x = clickPosition.value.x + (minatureMovement.value / 2 - minatureSize / 2) * Math.cos(angle);
+  //     y = clickPosition.value.y + (minatureMovement.value / 2 - minatureSize / 2) * Math.sin(angle);
+  //   }
+
+  //   props.minatures[activeMinatureIndex].xCord = x;
+  //   props.minatures[activeMinatureIndex].yCord = y;
+  // });
 })
 
 </script>
 
 <template>
   <div id="board-container">
-    <div id="board" @click="handleBoardClick($event)" :style="{transform: `scale(${zoomLevel})`}">
-        <div class="circle" v-show="clickPosition" :style="{ 
-            top: `${clickPosition?.y - minatureSize + circleOffset}px`, 
-            left: `${clickPosition?.x - minatureSize + circleOffset}px`,
-            width: `${minatureMovement}px`,
-            height: `${minatureMovement}px`
-          }"></div>
-        <Minature v-for="minature in minatures" :key="minature.id" :minature="minature"
-          :isActive="activeMinatureId === minature.id" @setActiveMinature="onSetActiveMinature" @click="handleMinatureClick($event, minature)"/>
+    <div id="board" @click="handleBoardClick($event)">
+      <div class="circle" v-show="clickPosition" :style="{
+        top: `${clickPosition?.y - minatureSize + circleOffset}px`,
+        left: `${clickPosition?.x - minatureSize + circleOffset}px`,
+        width: `${minatureMovement}px`,
+        height: `${minatureMovement}px`
+      }"></div>
+      <Minature v-for="minature in minatures" :key="minature.id" :minature="minature"
+        :isActive="activeMinatureId === minature.id" @setActiveMinature="onSetActiveMinature"
+        @click="handleMinatureClick($event, minature)" />
     </div>
   </div>
 </template>
 
 <style>
-
 .circle {
   position: absolute;
   background: #ddd;
@@ -137,9 +147,9 @@ onMounted(() => {
   height: 90vh;
   width: 1000px;
   position: relative;
-  border: 1px solid;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: scroll;
+  background: blue;
+  transition: transform 0.2s ease;
 }
-
 </style>
